@@ -14,7 +14,7 @@ url = 'https://api.postmarkapp.com/email'
 
 app = Flask(__name__)
 
-@app.route('/bw-text2mail', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def receive():
     if request.method == 'POST':
         data = request.get_json()
