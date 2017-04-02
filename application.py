@@ -1,5 +1,4 @@
 from flask import Flask, request
-import json
 import requests
 
 """
@@ -18,7 +17,7 @@ app = Flask(__name__)
 @app.route('/bw-text2mail', methods=['POST', 'GET'])
 def receive():
     if request.method == 'POST':
-        data = json.loads(request.data)
+        data = request.get_json()
         msgFrom = data['from']
         msgTo = data['to']
         msgBody = data['text']
